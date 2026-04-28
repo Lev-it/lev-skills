@@ -1,33 +1,78 @@
-# lev-it/lev-skills
+# CLAUDE.md
 
-This is the LeverageIT shared agent skills repository. It contains curated `SKILL.md` files for Claude Code and other AI coding agents.
+Behavioral guidelines and repo context for the LeverageIT agent skills repository.
 
-Skills are Markdown files with YAML frontmatter. Claude reads the `description` field to decide when to apply a skill automatically, then follows the instructions inside during that task.
+---
 
-## Repo structure
+## 1. Think Before Coding
+
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+
+Before implementing:
+
+* State your assumptions explicitly. If uncertain, ask.
+* If multiple interpretations exist, present them — don't pick silently.
+* If a simpler approach exists, say so. Push back when warranted.
+* If something is unclear, stop. Name what's confusing. Ask.
+
+## 2. Simplicity First
+
+**Minimum code that solves the problem. Nothing speculative.**
+
+* No features beyond what was asked.
+* No abstractions for single-use code.
+* No "flexibility" or "configurability" that wasn't requested.
+* No error handling for impossible scenarios.
+* If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## 3. Surgical Changes
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+
+* Don't "improve" adjacent code, comments, or formatting.
+* Don't refactor things that aren't broken.
+* Match existing style, even if you'd do it differently.
+* If you notice unrelated dead code, mention it — don't delete it.
+
+When your changes create orphans:
+
+* Remove imports/variables/functions that YOUR changes made unused.
+* Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+
+## 4. Goal-Driven Execution
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+
+* "Add a skill" → "Skill installs cleanly via `npx skills add`, description triggers correctly"
+* "Update a skill" → "Confirm the SKILL.md diff is minimal and frontmatter is valid"
+
+For multi-step tasks, state a brief plan:
+
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+---
+
+## Repo Overview
+
+This is the LeverageIT shared agent skills repo. Skills are `SKILL.md` files Claude reads to extend its capabilities. The `description` frontmatter field controls when a skill auto-activates.
 
 ```
 .claude/skills/<skill-name>/SKILL.md   ← skill instructions + frontmatter
 README.md                              ← team install guide
 CLAUDE.md                              ← this file
 skills-lock.json                       ← lockfile tracking skill sources
-```
-
-## Installing skills from this repo
-
-```bash
-# Global install — works across all projects on your machine
-npx skills add lev-it/lev-skills -a claude-code -g -y
-
-# Project-level install — commit .claude/skills/ so the whole team gets them on pull
-npx skills add lev-it/lev-skills -a claude-code -y
-git add .claude/skills/ && git commit -m "chore: add lev-it agent skills"
-
-# See what's available before installing
-npx skills add lev-it/lev-skills --list
-
-# Install specific skills only
-npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd -a claude-code -g -y
 ```
 
 ## Available Skills
@@ -76,7 +121,7 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd -a cla
 | `minimax-pdf` | Generates and reformats print-ready PDFs with a design-token system for visual consistency. |
 | `minimax-xlsx` | Creates, reads, edits, and validates Excel files — financial models, pivot tables, formulas. |
 | `pptx-generator` | Generates and edits PowerPoint presentations with PptxGenJS — decks, slide layouts, exports. |
-| `drawio-skill` | Generates draw.io diagrams (flowcharts, architecture, ERDs) from natural language and exports to PNG/SVG/PDF. |
+| `drawio-skill` | Generates draw.io diagrams (flowcharts, architecture, ERDs) from natural language, exports to PNG/SVG/PDF. |
 
 ### Infrastructure
 
@@ -84,49 +129,35 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd -a cla
 |---|---|
 | `session-start-hook` | Creates Claude Code `SessionStart` hooks that install dependencies before a session begins. |
 
-## Adding a new skill to this repo
+## Common Tasks
 
-1. Create the skill directory and `SKILL.md`:
-   ```bash
-   mkdir -p .claude/skills/my-skill
-   npx skills init my-skill
-   mv my-skill/SKILL.md .claude/skills/my-skill/SKILL.md
-   rmdir my-skill
-   ```
+**Install all skills globally:**
+```bash
+npx skills add lev-it/lev-skills -a claude-code -g -y
+```
 
-2. Fill in the frontmatter and instructions:
-   ```markdown
-   ---
-   name: my-skill
-   description: What this skill does and when Claude should use it automatically.
-   ---
+**Add a new skill:**
+```bash
+mkdir -p .claude/skills/my-skill
+# create SKILL.md with name + description frontmatter and instructions
+git checkout -b add-my-skill
+git add .claude/skills/my-skill/
+git commit -m "feat: add my-skill"
+git push -u origin add-my-skill
+```
 
-   # My Skill
-
-   Instructions for Claude to follow when this skill is active.
-   ```
-   > The `description` field controls auto-activation — be specific about triggers.
-
-3. Test locally, then open a PR:
-   ```bash
-   git checkout -b add-my-skill
-   git add .claude/skills/my-skill/
-   git commit -m "feat: add my-skill"
-   git push -u origin add-my-skill
-   ```
-
-## Pulling in an external skill
-
+**Pull in an external skill:**
 ```bash
 npx skills add owner/repo --skill skill-name -a claude-code -y --copy
 git add .claude/skills/<skill-name>/
 git commit -m "feat: add <skill-name> from owner/repo"
 ```
 
-## Updating and removing skills
-
+**Update all skills:**
 ```bash
-npx skills update -g -y                    # update all global skills
-npx skills update transitions-dev -g       # update one skill
-npx skills remove <skill-name> -g          # remove a skill
+npx skills update -g -y
 ```
+
+---
+
+**These guidelines are working if:** diffs are minimal and purposeful, skills install and trigger cleanly, and questions come before implementation rather than after mistakes.
