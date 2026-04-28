@@ -89,6 +89,23 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `vercel-react-native-skills` | React Native / Expo best practices for lists, animations, native modules, and performance. |
 | `vercel-react-view-transitions` | Smooth page/route transitions using React's View Transition API and `<ViewTransition>`. |
 
+### Design Taste
+
+| Skill | What it does |
+|---|---|
+| `design-taste-frontend` | Senior UI/UX engineer rules — metric-based layout, strict component hierarchy, anti-generic patterns. |
+| `high-end-visual-design` | Agency-level design system: exact fonts, spacing, shadows, card structures, and animations. |
+| `minimalist-ui` | Clean editorial interfaces — warm monochrome, typographic contrast, flat bento grids, muted pastels. |
+| `industrial-brutalist-ui` | Raw mechanical interfaces — Swiss grid, military terminal aesthetics, extreme type scale, declassified-blueprint feel. |
+| `gpt-taste` | Elite UX/UI with advanced GSAP motion — AIDA structure, wide editorial type, gapless bento grids, ScrollTrigger. |
+| `brandkit` | Premium brand-kit image generation — logo systems, identity decks, visual-world presentations for high-end brands. |
+| `stitch-design-taste` | Generates `DESIGN.md` design-system files that enforce premium, anti-generic UI for Google Stitch. |
+| `image-to-code` | Generates design images first, deeply analyses them, then implements the website to match as closely as possible. |
+| `imagegen-frontend-web` | Premium artistic website design references — art-directed, implementation-friendly image generation. |
+| `imagegen-frontend-mobile` | Premium iOS/Android screen concepts and flows — app-native image generation for mobile design. |
+| `redesign-existing-projects` | Audits current design, identifies generic AI patterns, and upgrades existing sites to premium quality. |
+| `full-output-enforcement` | Overrides LLM truncation — enforces complete code generation, bans placeholder patterns. |
+
 ### Productivity & Workflow
 
 | Skill | What it does |
