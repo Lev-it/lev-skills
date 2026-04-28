@@ -61,6 +61,15 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `redesign-existing-projects` | Audits current design, identifies generic AI patterns, and upgrades existing sites to premium quality. |
 | `full-output-enforcement` | Overrides LLM truncation — enforces complete code generation, bans placeholder patterns. |
 
+### Engineering Standards (from [google-labs-code/design.md](https://github.com/google-labs-code/design.md))
+
+| Skill | What it does |
+|---|---|
+| `typed-service-contracts` | Architecture standard for type-safe TypeScript services using the "Spec and Handler" pattern — for CLIs, libraries, and complex business logic. |
+| `tdd-red-green-refactor` | Enforces disciplined Red-Green-Refactor TDD in TypeScript/Node.js — for new features, bug fixes, and logic migrations. |
+| `agent-dx-cli-scale` | Scoring scale for evaluating how well a CLI is designed for AI agents, based on "Rewrite Your CLI for AI Agents" principles. |
+| `ink` | Ink terminal renderer for `@json-render/ink` — turns JSON specs into interactive terminal UIs. |
+
 ### Productivity & Workflow
 
 | Skill | What it does |

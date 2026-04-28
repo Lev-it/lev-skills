@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "agent-dx-cli-scale": {
+      "source": "google-labs-code/design.md",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/agent-dx-cli-scale/SKILL.md",
+      "computedHash": "1d2aa0d3cfa03501af8656283631b61f572f6458ed7958f232f8acd5601386fa"
+    },
     "brainstorming": {
       "source": "mxyhi/ok-skills",
       "sourceType": "github",
@@ -97,6 +103,12 @@
       "skillPath": "skills/brutalist-skill/SKILL.md",
       "computedHash": "8fc355c4aadb7d29c53ca28bc41be3cd6eea765d121e3737c4dc2d0f90a8effa"
     },
+    "ink": {
+      "source": "google-labs-code/design.md",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/ink/SKILL.md",
+      "computedHash": "7430a524eed5637b6510c6854008116a796ee33666cfa3699d8ce8b8e11ef7f7"
+    },
     "minimalist-ui": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
@@ -157,11 +169,23 @@
       "skillPath": "tdd/SKILL.md",
       "computedHash": "917bc699d8ab8ecac94cfd18752a0d599d19860a94f6b90aed74d34b06388cdc"
     },
+    "tdd-red-green-refactor": {
+      "source": "google-labs-code/design.md",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/tdd/SKILL.md",
+      "computedHash": "aa567771e6963cb2b34115db22a3f6417f0c910d76d0e7d695b544f502d936f1"
+    },
     "transitions-dev": {
       "source": "jakubantalik/transitions-dev",
       "sourceType": "github",
       "skillPath": "skills/transitions-dev/SKILL.md",
       "computedHash": "ef105c65e70d52674942e70e7649e57a97de881475086e998a0f6484313000aa"
+    },
+    "typed-service-contracts": {
+      "source": "google-labs-code/design.md",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/typed-service-contracts/SKILL.md",
+      "computedHash": "e3b4c278b545b842245f0edbbf4da3c682ec22c8ad543e7210edb3bff2765e0f"
     },
     "vercel-cli-with-tokens": {
       "source": "vercel-labs/agent-skills",
