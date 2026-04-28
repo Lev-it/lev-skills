@@ -1,6 +1,6 @@
 # LeverageIT Agent Skills
 
-A curated collection of [agent skills](https://agentskills.io) for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
+A curated collection of **38 agent skills** across 8 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
 
 ## Install All Skills
 
