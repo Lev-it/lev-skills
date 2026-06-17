@@ -88,6 +88,8 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `vercel-react-best-practices` | Next.js & React performance: memoization, bundle splitting, server components, hydration. |
 | `vercel-react-native-skills` | React Native / Expo best practices for lists, animations, native modules, and performance. |
 | `vercel-react-view-transitions` | Smooth page/route transitions using React's View Transition API and `<ViewTransition>`. |
+| `vercel-optimize` | Vercel cost and performance optimization — bill reduction, slow routes, caching, Core Web Vitals, Fluid compute. |
+| `writing-guidelines` | Reviews docs and prose for voice, tone, and writing style compliance. |
 
 ### Design Taste
 

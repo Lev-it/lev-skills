@@ -1,6 +1,6 @@
 # LeverageIT Agent Skills
 
-A curated collection of **55 agent skills** across 9 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
+A curated collection of **57 agent skills** across 9 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
 
 ## Install All Skills
 
@@ -43,6 +43,8 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `vercel-react-best-practices` | Next.js & React performance: memoization, bundle splitting, server components, hydration. |
 | `vercel-react-native-skills` | React Native / Expo best practices for lists, animations, native modules, and performance. |
 | `vercel-react-view-transitions` | Smooth page/route transitions using React's View Transition API and `<ViewTransition>`. |
+| `vercel-optimize` | Vercel cost and performance optimization — bill reduction, slow routes, caching, Core Web Vitals, Fluid compute. |
+| `writing-guidelines` | Reviews docs and prose for voice, tone, and writing style compliance. |
 
 ### Design Taste (from [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) & [nutlope/hallmark](https://github.com/nutlope/hallmark))
 
