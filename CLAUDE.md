@@ -155,6 +155,27 @@ skills-lock.json                       ← lockfile tracking skill sources
 |---|---|
 | `session-start-hook` | Creates Claude Code `SessionStart` hooks that install dependencies before a session begins. |
 
+### Video & Motion
+
+| Skill | What it does |
+|---|---|
+| `hyperframes` | Entry point for all video work — routes any "make me a video" request to the right workflow. Start here. |
+| `hyperframes-core` | HyperFrames HTML composition contract — structure, clips, tracks, variables, media playback, render rules. |
+| `hyperframes-animation` | All animation knowledge — atomic motion rules, scene blueprints, transitions, GSAP/Lottie/Three.js/CSS adapters. |
+| `hyperframes-creative` | Creative direction — palettes, typography, narration, beat planning, audio-reactive visuals, brand decisions. |
+| `hyperframes-media` | Asset preprocessing — TTS (HeyGen/ElevenLabs), BGM, Whisper transcription, background removal, captions. |
+| `hyperframes-cli` | HyperFrames CLI dev loop — init, render, publish, lambda, preview, lint, and troubleshooting. |
+| `hyperframes-registry` | Install and wire registry blocks and components into compositions. |
+| `product-launch-video` | SaaS promo, feature reveal, or launch video from a product URL or brief. |
+| `faceless-explainer` | Text/article/notes → narrated explainer video with typography and abstract graphics. |
+| `website-to-video` | Captures a website and turns it into a narrated walkthrough video. |
+| `pr-to-video` | GitHub PR → code-diff explainer video with narration and visuals. |
+| `motion-graphics` | Short design-led motion graphics — logo stings, kinetic type, stat pops, lower-thirds (under 30s). |
+| `embedded-captions` | Adds cinematic captions to talking-head video — 32 visual identities, VFX-grade styling. |
+| `graphic-overlays` | Layers timed graphic overlay cards (titles, lower-thirds, callouts) onto an existing video. |
+| `general-video` | Fallback for longer or freeform video compositions that don't fit a specialised workflow. |
+| `remotion-to-hyperframes` | Ports existing Remotion compositions to HyperFrames. |
+
 ## Common Tasks
 
 **Install all skills globally:**
