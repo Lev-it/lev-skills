@@ -97,6 +97,12 @@
       "skillPath": "skills/graphic-overlays/SKILL.md",
       "computedHash": "3994532b78c9374556bc329461636e17dff376a4bf94c2223b110ae7efe19cea"
     },
+    "hallmark": {
+      "source": "nutlope/hallmark",
+      "sourceType": "github",
+      "skillPath": "skills/hallmark/SKILL.md",
+      "computedHash": "8a8ecafd613f09e701330b5aa4a591ac539abb2605596df4a2394f03628d1d76"
+    },
     "high-end-visual-design": {
       "source": "Leonxlnx/taste-skill",
       "sourceType": "github",

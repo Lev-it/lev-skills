@@ -105,6 +105,7 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `imagegen-frontend-mobile` | Premium iOS/Android screen concepts and flows — app-native image generation for mobile design. |
 | `redesign-existing-projects` | Audits current design, identifies generic AI patterns, and upgrades existing sites to premium quality. |
 | `full-output-enforcement` | Overrides LLM truncation — enforces complete code generation, bans placeholder patterns. |
+| `hallmark` | Anti-AI-slop design — builds, audits, and redesigns pages to avoid generic AI patterns. Triggers on new pages, redesigns, audits, and URL/screenshot design extraction. |
 
 ### Engineering Standards
 

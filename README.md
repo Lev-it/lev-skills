@@ -1,6 +1,6 @@
 # LeverageIT Agent Skills
 
-A curated collection of **54 agent skills** across 9 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
+A curated collection of **55 agent skills** across 9 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
 
 ## Install All Skills
 
@@ -44,7 +44,7 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `vercel-react-native-skills` | React Native / Expo best practices for lists, animations, native modules, and performance. |
 | `vercel-react-view-transitions` | Smooth page/route transitions using React's View Transition API and `<ViewTransition>`. |
 
-### Design Taste (from [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill))
+### Design Taste (from [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) & [nutlope/hallmark](https://github.com/nutlope/hallmark))
 
 | Skill | What it does |
 |---|---|
@@ -60,6 +60,7 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `imagegen-frontend-mobile` | Premium iOS/Android screen concepts and flows — app-native image generation for mobile design. |
 | `redesign-existing-projects` | Audits current design, identifies generic AI patterns, and upgrades existing sites to premium quality. |
 | `full-output-enforcement` | Overrides LLM truncation — enforces complete code generation, bans placeholder patterns. |
+| `hallmark` | Anti-AI-slop design — builds, audits, and redesigns pages to avoid generic AI patterns. Triggers on new pages, redesigns, audits, and URL/screenshot design extraction. |
 
 ### Engineering Standards (from [google-labs-code/design.md](https://github.com/google-labs-code/design.md))
 
