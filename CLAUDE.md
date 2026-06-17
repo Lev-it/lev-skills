@@ -179,6 +179,121 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `general-video` | Fallback for longer or freeform video compositions that don't fit a specialised workflow. |
 | `remotion-to-hyperframes` | Ports existing Remotion compositions to HyperFrames. |
 
+### Product Management
+
+| Skill | What it does |
+|---|---|
+| `analyze-feature-requests` | Analyzes and prioritizes feature requests by theme, strategic alignment, impact, and risk. |
+| `interview-script` | Generates structured user interview scripts for discovery. |
+| `summarize-interview` | Summarizes user interview recordings into insights and quotes. |
+| `summarize-meeting` | Summarizes meeting notes into decisions, actions, and key points. |
+| `sentiment-analysis` | Analyzes user feedback for sentiment patterns and themes. |
+| `user-personas` | Creates detailed user personas from research data. |
+| `user-segmentation` | Segments users by behavior, needs, and characteristics. |
+| `customer-journey-map` | Maps end-to-end customer journeys with touchpoints, emotions, and pain points. |
+| `market-segments` | Identifies and profiles distinct market segments. |
+| `market-sizing` | Estimates TAM/SAM/SOM for a market. |
+| `competitor-analysis` | Analyzes competitors with strengths, weaknesses, and differentiation opportunities. |
+| `competitive-battlecard` | Creates sales-ready competitive battlecards for a specific competitor. |
+| `product-vision` | Crafts a clear, inspiring product vision statement. |
+| `product-strategy` | Defines product strategy with goals, bets, and success metrics. |
+| `opportunity-solution-tree` | Builds an Opportunity Solution Tree linking outcomes to opportunities and solutions. |
+| `outcome-roadmap` | Creates an outcome-based roadmap aligned to business goals. |
+| `brainstorm-okrs` | Brainstorms team-level OKRs aligned with company objectives. |
+| `north-star-metric` | Identifies the North Star metric and supporting metrics tree. |
+| `lean-canvas` | Fills out a Lean Canvas for a product or startup idea. |
+| `startup-canvas` | Creates a full Startup Canvas covering problem, solution, and traction. |
+| `business-model` | Generates a Business Model Canvas with all 9 building blocks. |
+| `ansoff-matrix` | Maps growth strategies across market penetration, development, and diversification. |
+| `swot-analysis` | Produces a SWOT analysis for a product or company. |
+| `pestle-analysis` | Runs a PESTLE analysis for macro-environment factors. |
+| `porters-five-forces` | Analyzes industry competitiveness using Porter's Five Forces. |
+| `value-proposition` | Defines the value proposition canvas for a product or feature. |
+| `brainstorm-ideas-new` | Brainstorms features for a new product from PM, Designer, and Engineer perspectives. |
+| `brainstorm-ideas-existing` | Brainstorms features for an existing product from a product trio perspective. |
+| `brainstorm-experiments-new` | Designs lean startup experiments (pretotypes) for a new product idea. |
+| `brainstorm-experiments-existing` | Designs experiments to validate assumptions for an existing product. |
+| `identify-assumptions-new` | Identifies risky assumptions for a new product across 8 risk categories. |
+| `identify-assumptions-existing` | Identifies risky assumptions for a feature in an existing product. |
+| `prioritize-assumptions` | Prioritizes assumptions by risk and testability for validation sequencing. |
+| `pre-mortem` | Runs a pre-mortem to surface risks before a launch or decision. |
+| `strategy-red-team` | Red-teams a strategy or plan to find weaknesses and blind spots. |
+| `create-prd` | Creates a full Product Requirements Document using an 8-section template. |
+| `job-stories` | Writes job stories in JTBD format with acceptance criteria. |
+| `user-stories` | Writes user stories with acceptance criteria and edge cases. |
+| `prioritize-features` | Prioritizes a feature list using impact, effort, and strategic alignment. |
+| `prioritization-frameworks` | Applies RICE, MoSCoW, Kano, or other prioritization frameworks. |
+| `sprint-plan` | Creates a sprint plan with goals, stories, and capacity allocation. |
+| `stakeholder-map` | Maps stakeholders by influence, interest, and communication needs. |
+| `release-notes` | Writes polished release notes from a feature list or changelog. |
+| `shipping-artifacts` | Generates all shipping artifacts — release notes, comms, tickets — from a brief. |
+| `retro` | Facilitates a sprint retrospective with structured format. |
+| `test-scenarios` | Generates comprehensive test scenarios for a feature or user story. |
+| `intended-vs-implemented` | Finds gaps between what a system is supposed to do and what the code actually does. |
+| `dummy-dataset` | Generates realistic dummy datasets for testing and demos. |
+| `gtm-strategy` | Creates a full go-to-market strategy with channels, messaging, and launch timeline. |
+| `gtm-motions` | Identifies the best GTM motions (inbound, outbound, PLG, ABM, partners, etc.). |
+| `beachhead-segment` | Identifies the best first beachhead market segment for launch. |
+| `ideal-customer-profile` | Defines the ICP from research with demographics, behaviors, and JTBD. |
+| `growth-loops` | Identifies viral, usage, collaboration, and referral growth loops. |
+| `marketing-ideas` | Brainstorms marketing campaign ideas for a product or feature. |
+| `positioning-ideas` | Generates positioning statements and messaging angles. |
+| `value-prop-statements` | Writes value proposition statements for different audiences. |
+| `product-name` | Generates and evaluates product name ideas. |
+| `monetization-strategy` | Designs monetization models and pricing approaches. |
+| `pricing-strategy` | Analyzes pricing strategy options with trade-offs. |
+| `metrics-dashboard` | Designs a metrics dashboard with KPIs, leading indicators, and guardrails. |
+| `ab-test-analysis` | Analyzes A/B test results with statistical significance and ship/extend/stop recommendations. |
+| `cohort-analysis` | Performs cohort analysis on user data — retention curves, feature adoption, churn. |
+| `sql-queries` | Writes SQL queries for product analytics — retention, funnels, cohorts, segmentation. |
+| `grammar-check` | Identifies grammar, logic, and flow errors and suggests targeted fixes. |
+| `review-resume` | Reviews a resume for clarity, impact, and positioning. |
+| `draft-nda` | Drafts a Non-Disclosure Agreement between two parties. |
+| `privacy-policy` | Generates a privacy policy for a product or service. |
+| `wwas` | Runs a "What Went / What Almost / So What" retrospective format. |
+
+### Engineering Workflow
+
+| Skill | What it does |
+|---|---|
+| `codebase-design` | Shared vocabulary for designing deep modules and finding deepening opportunities. |
+| `domain-modeling` | Builds and sharpens a project's domain model and ubiquitous language. |
+| `design-an-interface` | Generates multiple radically different interface designs via parallel sub-agents. |
+| `ubiquitous-language` | Establishes and maintains shared domain terminology across the codebase. |
+| `decision-mapping` | Maps out a decision space before committing to an approach. |
+| `improve-codebase-architecture` | Finds deepening opportunities informed by domain language and ADRs. |
+| `implement` | Implements a feature or fix using the project's conventions and domain model. |
+| `prototype` | Builds a quick throwaway prototype to validate an idea. |
+| `diagnosing-bugs` | Diagnosis loop for hard bugs and performance regressions. |
+| `resolving-merge-conflicts` | Resolves in-progress git merge/rebase conflicts. |
+| `request-refactor-plan` | Creates a detailed refactor plan with tiny commits, filed as a GitHub issue. |
+| `migrate-to-shoehorn` | Migrates test files from `as` type assertions to `@total-typescript/shoehorn`. |
+| `to-prd` | Converts a brief or conversation into a structured PRD. |
+| `to-issues` | Breaks a plan or PRD into granular GitHub issues. |
+| `review` | Reviews a pull request for correctness, style, and architecture. |
+| `triage` | Triages a bug report or issue into priority, severity, and next steps. |
+| `qa` | Interactive QA session — conversationally report bugs and file GitHub issues. |
+| `handoff` | Writes a handoff document summarizing context for the next person. |
+| `grilling` | Stress-tests a plan or design by interviewing the user relentlessly. |
+| `grill-me` | Grills the user on a topic to surface gaps and assumptions. |
+| `grill-with-docs` | Grills a plan or decision against official documentation. |
+| `teach` | Teaches a concept through Socratic questioning and examples. |
+| `ask-matt` | Answers TypeScript and engineering questions in Matt Pocock's style. |
+| `writing-beats` | Shapes an article as a journey of beats, assembled conversationally. |
+| `writing-fragments` | Mines raw ideas and fragments before imposing structure on an article. |
+| `writing-shape` | Turns notes or a rough draft into a publishable article, paragraph by paragraph. |
+| `edit-article` | Edits an article for clarity, structure, and voice. |
+| `scaffold-exercises` | Creates exercise directory structures with problems, solutions, and explainers. |
+| `git-guardrails-claude-code` | Sets up Claude Code hooks to block dangerous git commands before execution. |
+| `setup-pre-commit` | Sets up Husky pre-commit hooks with lint-staged, type-checking, and tests. |
+| `obsidian-vault` | Searches, creates, and manages notes in an Obsidian vault with wikilinks. |
+
+### Research & Web Reach
+
+| Skill | What it does |
+|---|---|
+| `agent-reach` | Web and platform research across 13 channels — Twitter/X, Reddit, LinkedIn, YouTube, GitHub, and more. |
+
 ## Common Tasks
 
 **Install all skills globally:**
@@ -211,3 +326,5 @@ npx skills update -g -y
 ---
 
 **These guidelines are working if:** diffs are minimal and purposeful, skills install and trigger cleanly, and questions come before implementation rather than after mistakes.
+
+<!-- 159 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
