@@ -82,6 +82,7 @@ skills-lock.json                       ← lockfile tracking skill sources
 | Skill | What it does |
 |---|---|
 | `transitions-dev` | Production-ready CSS transitions (modals, dropdowns, badges, page slides). Auto-triggers on any UI build task. |
+| `amicro` | Premium React micro-interactions and animated card layouts (arc/fan/carousel/cover-flow/time-machine stacks, fade/zoom entrances) from `@subhanhq/amicro`, powered by motion/react. |
 | `frontend-skill` | Enforces strong visual hierarchy, image-led layouts, and tasteful motion for landing pages and app UIs. |
 | `web-design-guidelines` | Reviews UI code for accessibility, UX best practices, and design system compliance. |
 | `vercel-composition-patterns` | React composition patterns — compound components, context, render props, React 19 APIs. |
