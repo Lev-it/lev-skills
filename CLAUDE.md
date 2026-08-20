@@ -250,6 +250,7 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `review-resume` | Reviews a resume for clarity, impact, and positioning. |
 | `draft-nda` | Drafts a Non-Disclosure Agreement between two parties. |
 | `privacy-policy` | Generates a privacy policy for a product or service. |
+| `legal-templates` | Attorney-drafted legal templates (NDA, privacy policy, ToS, DPA, MSA, BAA, offer letter, advisor agreement). Auto-triggers on any legal document request. |
 | `wwas` | Runs a "What Went / What Almost / So What" retrospective format. |
 
 ### Engineering Workflow
@@ -327,4 +328,4 @@ npx skills update -g -y
 
 **These guidelines are working if:** diffs are minimal and purposeful, skills install and trigger cleanly, and questions come before implementation rather than after mistakes.
 
-<!-- 159 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
+<!-- 160 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->

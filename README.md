@@ -1,6 +1,6 @@
 # LeverageIT Agent Skills
 
-A curated collection of **159 agent skills** across 12 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
+A curated collection of **160 agent skills** across 12 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
 
 ## Install All Skills
 
@@ -237,6 +237,7 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `review-resume` | Reviews a resume for clarity, impact, and positioning. |
 | `draft-nda` | Drafts a Non-Disclosure Agreement between two parties. |
 | `privacy-policy` | Generates a privacy policy for a product or service. |
+| `legal-templates` | Attorney-drafted legal templates (NDA, privacy policy, ToS, DPA, MSA, BAA, offer letter, advisor agreement). Auto-triggers on any legal document request. |
 | `wwas` | Runs a "What Went / What Almost / So What" retrospective format. |
 
 ### Engineering Workflow (from [mattpocock/skills](https://github.com/mattpocock/skills))
