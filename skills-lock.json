@@ -433,6 +433,12 @@
       "skillPath": "pm-execution/skills/job-stories/SKILL.md",
       "computedHash": "8b4a0d96bffd81266981e7ed0ed979d415995f6734d65e3cf6293cd28399d3a3"
     },
+    "last30days": {
+      "source": "mvanhorn/last30days-skill",
+      "sourceType": "github",
+      "skillPath": "skills/last30days/SKILL.md",
+      "computedHash": "a441a90ac2e64063bf3e0aa4ffa2d61de8c70aef36dc1c9a4e84533de6665c7d"
+    },
     "lean-canvas": {
       "source": "phuryn/pm-skills",
       "sourceType": "github",
