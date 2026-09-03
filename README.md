@@ -1,6 +1,6 @@
 # LeverageIT Agent Skills
 
-A curated collection of **160 agent skills** across 12 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
+A curated collection of **161 agent skills** across 12 categories for the LeverageIT dev team. Works with Claude Code and 50+ other AI coding agents.
 
 ## Install All Skills
 
@@ -306,6 +306,7 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | Skill | What it does |
 |---|---|
 | `agent-reach` | Web and platform research across 13 channels — Xiaohongshu, Twitter/X, Reddit, LinkedIn, YouTube, GitHub, B站, V2EX, RSS, and more. Use for any "research this", "look up", or "search for" request. |
+| `last30days` | Research what people actually say about any topic in the last 30 days. Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub, and the web. |
 
 ## Update Skills
 

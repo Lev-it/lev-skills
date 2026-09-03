@@ -294,6 +294,7 @@ skills-lock.json                       ← lockfile tracking skill sources
 | Skill | What it does |
 |---|---|
 | `agent-reach` | Web and platform research across 13 channels — Twitter/X, Reddit, LinkedIn, YouTube, GitHub, and more. |
+| `last30days` | Research what people actually say about any topic in the last 30 days. Pulls posts and engagement from Reddit, X, YouTube, TikTok, Hacker News, Polymarket, GitHub, and the web. |
 
 ## Common Tasks
 
@@ -328,4 +329,4 @@ npx skills update -g -y
 
 **These guidelines are working if:** diffs are minimal and purposeful, skills install and trigger cleanly, and questions come before implementation rather than after mistakes.
 
-<!-- 160 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
+<!-- 161 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
