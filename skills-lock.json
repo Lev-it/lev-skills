@@ -43,6 +43,12 @@
       "skillPath": "pm-go-to-market/skills/beachhead-segment/SKILL.md",
       "computedHash": "975e009cd04beffb0a4d68fd970a7677d9cb0ac95dabf058299c240410cef95a"
     },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "sourceType": "github",
+      "skillPath": "skills/better-ui/SKILL.md",
+      "computedHash": "d05cf568f197e47b15e71e21b19be1897eba2bf187ef7b0a341bc5ffaf3ffd4d"
+    },
     "brainstorm-experiments-existing": {
       "source": "phuryn/pm-skills",
       "sourceType": "github",
@@ -192,6 +198,12 @@
       "sourceType": "github",
       "skillPath": "skills/embedded-captions/SKILL.md",
       "computedHash": "133c9401ef6b831470fe4256686071a26afb2caeacb2cbe8faad540b96d3473b"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "51f2537e04d15911b41d78e2de24c36a0e26d41beae15e82a954fe5496a5eda9"
     },
     "faceless-explainer": {
       "source": "heygen-com/hyperframes",

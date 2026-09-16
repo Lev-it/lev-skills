@@ -108,6 +108,8 @@ skills-lock.json                       ← lockfile tracking skill sources
 | `redesign-existing-projects` | Audits current design, identifies generic AI patterns, and upgrades existing sites to premium quality. |
 | `full-output-enforcement` | Overrides LLM truncation — enforces complete code generation, bans placeholder patterns. |
 | `hallmark` | Anti-AI-slop design — builds, audits, and redesigns pages to avoid generic AI patterns. Triggers on new pages, redesigns, audits, and URL/screenshot design extraction. |
+| `better-ui` | Polishes and improves UI — concentric border radius, optical alignment, surface depth, contextual icons, hit areas, and compounding small details. |
+| `emil-design-eng` | Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. |
 
 ### Engineering Standards
 
@@ -329,4 +331,4 @@ npx skills update -g -y
 
 **These guidelines are working if:** diffs are minimal and purposeful, skills install and trigger cleanly, and questions come before implementation rather than after mistakes.
 
-<!-- 161 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
+<!-- 163 skills across 12 categories — run `npx skills add lev-it/lev-skills --list` for the full list -->
