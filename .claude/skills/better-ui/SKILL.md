@@ -1,6 +1,6 @@
 ---
 name: better-ui
-description: Polishes and improves the UI in your project. Covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas and more.
+description: UI polish reference for any design or frontend task. Use proactively whenever designing or building UI components, pages, or interfaces — covers concentric border radius, optical alignment, surface depth, contextual icons, hit areas, and compounding small details. Automatically apply when the user says "design a UI", "build a component", "create a page", "improve the UI", "make it look better", "polish this", or any UI/frontend task.
 ---
 
 # UI polish
