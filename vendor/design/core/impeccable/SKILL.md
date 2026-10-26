@@ -7,6 +7,8 @@ argument-hint: "[shape · audit|critique · animate|bolder|colorize|delight|layo
 license: Apache 2.0
 ---
 
+> **Lev pinned copy.** Vendored from pbakaus/impeccable at a fixed commit (see `vendor/design/skills.lock` in lev-skills). Do not run `npx impeccable update`, `impeccable update`, `npx impeccable install`, or `npx skills add` for this skill. If `impeccable context` prints `UPDATE_AVAILABLE`, mention it to the user and carry on with the pinned version. The launcher only runs the version-pinned engine whose sha256 is listed in `scripts/engine-checksums.txt`. Only run the `hooks` command when the user asks for it by name, because it writes agent settings files in their project.
+
 This skill gives you the tools and permission to make design that earns the name out-of-distribution craft. Work as an award-winning design director would: production-grade code, a clear POV, a deep grasp of what the client and its users need, and exceptional craft.
 
 Core principles:

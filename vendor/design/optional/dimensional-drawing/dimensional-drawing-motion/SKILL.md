@@ -14,7 +14,7 @@ Start from `templates/scene-dialog.js` + `templates/base.css`. It is the referen
 | You are | Use |
 |---|---|
 | Claude on claude.ai with the **Motion** artifact type | `adapters/claude-motion.md`. This is the primary, tuned target. |
-| Any other agent / no Claude | `adapters/headless/`: Playwright draws each frame, ffmpeg encodes. `npm install`, then `node render.mjs --scene … --css … --out film.mp4`. |
+| Any other agent / no Claude | `adapters/headless/`: Playwright draws each frame, ffmpeg encodes. `npm install --ignore-scripts` (Lev copy: the browser-downloading postinstall was removed; point `CHROMIUM_PATH` at an existing Chromium, or run `npx playwright install chromium` only if the user agrees), then `node render.mjs --scene … --css … --out film.mp4`. |
 
 The scene is the same file in both. It only needs a tiny `kit` (`seg, lerp, eo, ei, eio, clamp01, stage, h, css, scene`) and must be a **pure function of time**: `render(t)` sets every property from `t` alone, never from the previous frame. That is what lets a headless renderer jump to any frame.
 

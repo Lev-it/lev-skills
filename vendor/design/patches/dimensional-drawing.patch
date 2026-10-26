@@ -1,0 +1,40 @@
+diff --git a/dimensional-drawing-motion/SKILL.md b/dimensional-drawing-motion/SKILL.md
+index fe7f7f2..0246d93 100644
+--- a/dimensional-drawing-motion/SKILL.md
++++ b/dimensional-drawing-motion/SKILL.md
+@@ -14,7 +14,7 @@ Start from `templates/scene-dialog.js` + `templates/base.css`. It is the referen
+ | You are | Use |
+ |---|---|
+ | Claude on claude.ai with the **Motion** artifact type | `adapters/claude-motion.md`. This is the primary, tuned target. |
+-| Any other agent / no Claude | `adapters/headless/`: Playwright draws each frame, ffmpeg encodes. `npm install`, then `node render.mjs --scene … --css … --out film.mp4`. |
++| Any other agent / no Claude | `adapters/headless/`: Playwright draws each frame, ffmpeg encodes. `npm install --ignore-scripts` (Lev copy: the browser-downloading postinstall was removed; point `CHROMIUM_PATH` at an existing Chromium, or run `npx playwright install chromium` only if the user agrees), then `node render.mjs --scene … --css … --out film.mp4`. |
+ 
+ The scene is the same file in both. It only needs a tiny `kit` (`seg, lerp, eo, ei, eio, clamp01, stage, h, css, scene`) and must be a **pure function of time**: `render(t)` sets every property from `t` alone, never from the previous frame. That is what lets a headless renderer jump to any frame.
+ 
+diff --git a/dimensional-drawing-motion/adapters/headless/README.md b/dimensional-drawing-motion/adapters/headless/README.md
+index 551fcc1..8a6f167 100644
+--- a/dimensional-drawing-motion/adapters/headless/README.md
++++ b/dimensional-drawing-motion/adapters/headless/README.md
+@@ -11,7 +11,9 @@ Playwright opens `player.html`, calls the scene's `render(t)` for every frame, s
+ 
+ ```bash
+ cd skills/dimensional-drawing-motion/adapters/headless
+-npm install            # installs playwright + its chromium
++npm install --ignore-scripts   # installs playwright only (Lev copy: postinstall removed)
++# then set CHROMIUM_PATH to an existing Chromium, or, with the user's OK:
++# npx playwright install chromium
+ 
+ # the reference dialog film
+ node render.mjs \
+diff --git a/dimensional-drawing-motion/adapters/headless/package.json b/dimensional-drawing-motion/adapters/headless/package.json
+index 222192d..c36acb6 100644
+--- a/dimensional-drawing-motion/adapters/headless/package.json
++++ b/dimensional-drawing-motion/adapters/headless/package.json
+@@ -5,7 +5,6 @@
+   "type": "module",
+   "description": "Render dimensional-drawing motion scenes to MP4 with Playwright + ffmpeg.",
+   "scripts": {
+-    "postinstall": "playwright install chromium",
+     "example": "node render.mjs --scene ../../templates/scene-dialog.js --css ../../templates/base.css --out ../../../../assets/dialog-headless.mp4"
+   },
+   "dependencies": {

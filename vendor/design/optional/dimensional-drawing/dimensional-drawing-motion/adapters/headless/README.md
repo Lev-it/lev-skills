@@ -11,7 +11,9 @@ Playwright opens `player.html`, calls the scene's `render(t)` for every frame, s
 
 ```bash
 cd skills/dimensional-drawing-motion/adapters/headless
-npm install            # installs playwright + its chromium
+npm install --ignore-scripts   # installs playwright only (Lev copy: postinstall removed)
+# then set CHROMIUM_PATH to an existing Chromium, or, with the user's OK:
+# npx playwright install chromium
 
 # the reference dialog film
 node render.mjs \

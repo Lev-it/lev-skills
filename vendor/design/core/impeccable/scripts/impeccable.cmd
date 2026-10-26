@@ -35,13 +35,7 @@ set "run=%bin%"
 goto run
 :no_sibling
 
-set "home_bin=%USERPROFILE%\.impeccable\bin\impeccable.exe"
-if not exist "%home_bin%" goto no_home_bin
-if defined IMPECCABLE_LAUNCHER_PROBE goto no_home_bin
-call :probe "%home_bin%"
-if not "%probe_ok%"=="1" goto no_home_bin
-set "run=%home_bin%"
-goto run
+rem Lev patch: unverified %USERPROFILE%\.impeccable\bin\impeccable.exe fallback removed.
 :no_home_bin
 
 set "version="
@@ -68,13 +62,8 @@ set "run=%cached%"
 goto run
 :no_cache
 
-if defined IMPECCABLE_LAUNCHER_PROBE goto download
-where impeccable >nul 2>nul
-if errorlevel 1 goto download
-call :probe impeccable
-if not "%probe_ok%"=="1" goto download
-impeccable %*
-exit /b %errorlevel%
+rem Lev patch: unverified `impeccable` on PATH fallback removed.
+goto download
 
 :download
 rem Last resort: fetch this version's binary from the release channel into

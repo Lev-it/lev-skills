@@ -1,8 +1,9 @@
 #!/bin/sh
 # Impeccable launcher. Runs the platform binary shipped next to this script:
 #   <this dir>/bin/<os>-<arch>/impeccable
-# Order: $IMPECCABLE_BIN, the sibling binary, ~/.impeccable/bin/impeccable,
-# the version-pinned cache, then `impeccable` on PATH. Never needs Node.
+# Order: $IMPECCABLE_BIN, the sibling binary, then the version-pinned cache
+# (sha256-verified download). Never needs Node. (Lev patch: the unverified
+# ~/.impeccable/bin and PATH fallbacks were removed; see vendor/design/README.md.)
 # The unversioned home binary and the PATH candidate are validated with the
 # engine-probe handshake first: the retired 3.x npm CLI also installed a bin
 # named `impeccable`, and exec'ing it would fail every verb with
@@ -108,11 +109,10 @@ fi
 # launcher and impeccable.cmd share one cache.
 exe=""
 [ "$os" = windows ] && exe=".exe"
-home_bin="${HOME:-/nonexistent}/.impeccable/bin/impeccable$exe"
-if [ -z "$probing" ] && [ -x "$home_bin" ] && probe_ok "$home_bin"; then
-  exec "$home_bin" "$@"
-fi
-# Version-pinned user cache, filled by the download below or by `impeccable update`.
+# Lev patch: the unversioned ~/.impeccable/bin/impeccable fallback is removed.
+# It was exec'd without a checksum check, so a binary written there by
+# `impeccable update` would silently replace the pinned engine.
+# Version-pinned user cache, filled only by the sha256-verified download below.
 version=""
 [ -f "$dir/VERSION" ] && version=$(tr -d '[:space:]' < "$dir/VERSION")
 cache_root="${IMPECCABLE_HOME:-${HOME:-/nonexistent}/.impeccable}"
@@ -131,9 +131,8 @@ if [ -n "$version" ] && [ -x "$cached" ]; then
   fi
   echo "impeccable: cannot verify the cached engine $cached against $manifest; not using it" >&2
 fi
-if [ -z "$probing" ] && command -v impeccable >/dev/null 2>&1 && probe_ok impeccable; then
-  exec impeccable "$@"
-fi
+# Lev patch: the unverified `impeccable` on PATH fallback is removed for the
+# same reason. Use IMPECCABLE_BIN to point at a binary you verified yourself.
 
 # Last resort: fetch this version's binary for the current platform from the
 # public release channel into the user cache. Needs network; sandboxes without
