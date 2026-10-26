@@ -66,6 +66,23 @@ npx skills add lev-it/lev-skills --skill systematic-debugging --skill tdd --skil
 | `better-ui` | Polishes and improves UI — concentric border radius, optical alignment, surface depth, contextual icons, hit areas, and compounding small details. |
 | `emil-design-eng` | Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. |
 
+### Design Skills Pack: pinned (`vendor/design/`, not auto-installed)
+
+Pinned, vetted copies of upstream design skills. They live in `vendor/design/`, outside `.claude/skills/`, so the install commands above **do not** install them. Rolling them out to agents is a separate, approved step. Details, pins and licenses are in [`vendor/design/README.md`](vendor/design/README.md) and [`vendor/design/THIRD_PARTY_NOTICES.md`](vendor/design/THIRD_PARTY_NOTICES.md).
+
+| When you need to… | Use | Path |
+|---|---|---|
+| Review, critique, audit or polish an existing UI | `impeccable` | `vendor/design/core/impeccable` |
+| Build a new page or site | `hallmark` (v2.0.0) | `vendor/design/core/hallmark` |
+| Add, review or tune motion and animation | Emil Kowalski skills (`animate`, `review-animations`, `emil-design-eng`, …) | `vendor/design/core/emil/` |
+| Write, lint, diff or export a `DESIGN.md` (Google format, linted with `@google/design.md@0.4.0`) | `design-md` | `vendor/design/core/design-md` |
+| *Optional trial:* style, palette and font database | `ui-ux-pro-max` (core only) | `vendor/design/optional/ui-ux-pro-max` |
+| *Optional trial:* gallery-driven art direction | `design-taste-frontend` (taste-skill 2.1.5) | `vendor/design/optional/taste-skill` |
+| *Optional trial:* isometric dimensional drawings and motion | `dimensional-drawing`, `dimensional-drawing-motion` | `vendor/design/optional/dimensional-drawing/` |
+| *Optional trial:* writing GSAP code (GSAP itself is under GreenSock's own license) | `gsap-*` | `vendor/design/optional/gsap/` |
+
+Re-sync from upstream with `scripts/sync-design-skills.sh` (dry run by default, never runs installers). Validate with `scripts/check-design-skills.sh`. Older overlapping copies above are listed in [`vendor/design/DEPRECATIONS.md`](vendor/design/DEPRECATIONS.md) as proposed for retirement.
+
 ### Engineering Standards (from [google-labs-code/design.md](https://github.com/google-labs-code/design.md))
 
 | Skill | What it does |
