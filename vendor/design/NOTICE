@@ -1,0 +1,30 @@
+Lev design skills pack (vendor/design/ in lev-skills)
+
+This directory contains third-party software. Each component keeps its own
+license; copies of the upstream LICENSE and NOTICE files are in LICENSES/.
+See THIRD_PARTY_NOTICES.md for the full list.
+
+------------------------------------------------------------------------
+Impeccable
+Authors: Paul Bakaus (pbakaus) and contributors
+Licensed under the Apache License, Version 2.0 (LICENSES/impeccable-LICENSE).
+Upstream: https://github.com/pbakaus/impeccable
+Commit:   989c484c091d26f10fa102767eefc0da2e62ec67
+The upstream NOTICE is reproduced in LICENSES/impeccable-NOTICE.md.
+
+Modifications by Lev (Apache-2.0 section 4(b)), see patches/impeccable.patch:
+  - SKILL.md: added a "Lev pinned copy" note (no self-update; hooks only on request).
+  - reference/doctor.md, reference/hooks.md: removed suggestions to run
+    `impeccable update`.
+  - scripts/impeccable, scripts/impeccable.cmd: removed the fallbacks that ran an
+    unverified engine from ~/.impeccable/bin or from PATH, so only the
+    sha256-verified, version-pinned engine runs.
+
+------------------------------------------------------------------------
+DESIGN.md format and @google/design.md CLI
+Authors: Google LLC (google-labs-code)
+Licensed under the Apache License, Version 2.0 (LICENSES/design-md-LICENSE).
+Upstream: https://github.com/google-labs-code/design.md
+Commit:   6e5da5382f41edbba9d73b2c62f33f32e9971f15
+No Google code or spec text is copied. core/design-md/SKILL.md is an
+independent summary written by Lev that runs the published CLI at v0.4.0.

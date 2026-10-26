@@ -1,0 +1,118 @@
+diff --git a/SKILL.md b/SKILL.md
+index 7f0d01d..5255fc0 100644
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -7,6 +7,8 @@ argument-hint: "[shape · audit|critique · animate|bolder|colorize|delight|layo
+ license: Apache 2.0
+ ---
+ 
++> **Lev pinned copy.** Vendored from pbakaus/impeccable at a fixed commit (see `vendor/design/skills.lock` in lev-skills). Do not run `npx impeccable update`, `impeccable update`, `npx impeccable install`, or `npx skills add` for this skill. If `impeccable context` prints `UPDATE_AVAILABLE`, mention it to the user and carry on with the pinned version. The launcher only runs the version-pinned engine whose sha256 is listed in `scripts/engine-checksums.txt`. Only run the `hooks` command when the user asks for it by name, because it writes agent settings files in their project.
++
+ This skill gives you the tools and permission to make design that earns the name out-of-distribution craft. Work as an award-winning design director would: production-grade code, a clear POV, a deep grasp of what the client and its users need, and exceptional craft.
+ 
+ Core principles:
+diff --git a/reference/doctor.md b/reference/doctor.md
+index 438b8aa..6f8727b 100644
+--- a/reference/doctor.md
++++ b/reference/doctor.md
+@@ -6,7 +6,7 @@ This is maintenance, not design. Do not redesign anything, do not open files out
+ 
+ Three kinds of drift travel under "out of date". Keep them apart:
+ 
+-- **Tool version.** The installed skill is older than the published one. `impeccable context` reports that at boot as `UPDATE_AVAILABLE` and `npx impeccable update` fixes it, or the harness's plugin manager for a plugin install. Not this command's job.
++- **Tool version.** The installed skill is older than the published one. `impeccable context` reports that at boot as `UPDATE_AVAILABLE`. This is a pinned Lev copy: never run `npx impeccable update` or `impeccable update`, and never update it through a plugin manager. Tell the user an update is available; the pin is moved only by editing `vendor/design/skills.lock` and running `scripts/sync-design-skills.sh` in the lev-skills repo. Not this command's job.
+ - **Schema drift.** An artifact was written by an older Impeccable: fields nothing reads, fields now expected, files in retired locations. Mechanical, and this command repairs most of it.
+ - **Truth drift.** The code moved on and the document no longer describes it. No file comparison settles this. `document` owns DESIGN.md, `init` owns PRODUCT.md, and this command's job is to hand them a specific gap rather than a vague suspicion.
+ 
+diff --git a/reference/hooks.md b/reference/hooks.md
+index c523d5c..63004ca 100644
+--- a/reference/hooks.md
++++ b/reference/hooks.md
+@@ -16,7 +16,7 @@ Manual `.claude/skills/impeccable/scripts/impeccable detect` scans use the same
+ 
+ Supported harnesses: Claude Code (`.claude/settings.local.json` for a project-scope install; `~/.claude/settings.json` for a user-scope install; a project hook moved into shared `.claude/settings.json` is honored in place too), Codex (`.codex/hooks.json` in the project), Cursor (`.cursor/hooks.json` in the project), Grok Build (`.grok/hooks/impeccable.json` in the project; requires `/hooks-trust` or `--trust`), and GitHub Copilot (`.github/hooks/impeccable.json` in the project, a team-shared committed file that both the Copilot CLI and the cloud agent read). For the Copilot CLI, repo-level hooks fire once `.github/hooks/impeccable.json` is committed to the repository's default branch.
+ 
+-On **Cursor**, the hook runs on `postToolUse` for the `Write` tool (every agent file edit) and returns its reminder as `additional_context`, which Cursor adds after the tool result. Projects set up before this ran a `preToolUse` gate (`hook-before-edit`) that blocked bad writes before they landed; that gate still works until `hooks on`, `impeccable update`, or `impeccable doctor --fix` moves the entry to `postToolUse`.
++On **Cursor**, the hook runs on `postToolUse` for the `Write` tool (every agent file edit) and returns its reminder as `additional_context`, which Cursor adds after the tool result. Projects set up before this ran a `preToolUse` gate (`hook-before-edit`) that blocked bad writes before they landed; that gate still works until `hooks on` or `impeccable doctor --fix` moves the entry to `postToolUse`.
+ 
+ Gemini installs session and completion hooks in `.gemini/settings.json`, merged into the settings already there (comments are tolerated; a commented file is backed up to `settings.json.bak` before the rewrite, and a file that is not valid JSON is left alone). It does not install a per-edit detector hook. The `BeforeTool` hook only rewrites shell commands that run `build-phase`, and only on macOS and Linux; on Windows (where Gemini runs hooks through PowerShell) no session id reaches the shell, so a comp build is not tied to the session and the completion reminder stays silent.
+ 
+diff --git a/scripts/impeccable b/scripts/impeccable
+index 92d8cca..9d83cc4 100755
+--- a/scripts/impeccable
++++ b/scripts/impeccable
+@@ -1,8 +1,9 @@
+ #!/bin/sh
+ # Impeccable launcher. Runs the platform binary shipped next to this script:
+ #   <this dir>/bin/<os>-<arch>/impeccable
+-# Order: $IMPECCABLE_BIN, the sibling binary, ~/.impeccable/bin/impeccable,
+-# the version-pinned cache, then `impeccable` on PATH. Never needs Node.
++# Order: $IMPECCABLE_BIN, the sibling binary, then the version-pinned cache
++# (sha256-verified download). Never needs Node. (Lev patch: the unverified
++# ~/.impeccable/bin and PATH fallbacks were removed; see vendor/design/README.md.)
+ # The unversioned home binary and the PATH candidate are validated with the
+ # engine-probe handshake first: the retired 3.x npm CLI also installed a bin
+ # named `impeccable`, and exec'ing it would fail every verb with
+@@ -108,11 +109,10 @@ fi
+ # launcher and impeccable.cmd share one cache.
+ exe=""
+ [ "$os" = windows ] && exe=".exe"
+-home_bin="${HOME:-/nonexistent}/.impeccable/bin/impeccable$exe"
+-if [ -z "$probing" ] && [ -x "$home_bin" ] && probe_ok "$home_bin"; then
+-  exec "$home_bin" "$@"
+-fi
+-# Version-pinned user cache, filled by the download below or by `impeccable update`.
++# Lev patch: the unversioned ~/.impeccable/bin/impeccable fallback is removed.
++# It was exec'd without a checksum check, so a binary written there by
++# `impeccable update` would silently replace the pinned engine.
++# Version-pinned user cache, filled only by the sha256-verified download below.
+ version=""
+ [ -f "$dir/VERSION" ] && version=$(tr -d '[:space:]' < "$dir/VERSION")
+ cache_root="${IMPECCABLE_HOME:-${HOME:-/nonexistent}/.impeccable}"
+@@ -131,9 +131,8 @@ if [ -n "$version" ] && [ -x "$cached" ]; then
+   fi
+   echo "impeccable: cannot verify the cached engine $cached against $manifest; not using it" >&2
+ fi
+-if [ -z "$probing" ] && command -v impeccable >/dev/null 2>&1 && probe_ok impeccable; then
+-  exec impeccable "$@"
+-fi
++# Lev patch: the unverified `impeccable` on PATH fallback is removed for the
++# same reason. Use IMPECCABLE_BIN to point at a binary you verified yourself.
+ 
+ # Last resort: fetch this version's binary for the current platform from the
+ # public release channel into the user cache. Needs network; sandboxes without
+diff --git a/scripts/impeccable.cmd b/scripts/impeccable.cmd
+index 09abf6b..6a9b903 100644
+--- a/scripts/impeccable.cmd
++++ b/scripts/impeccable.cmd
+@@ -35,13 +35,7 @@ set "run=%bin%"
+ goto run
+ :no_sibling
+ 
+-set "home_bin=%USERPROFILE%\.impeccable\bin\impeccable.exe"
+-if not exist "%home_bin%" goto no_home_bin
+-if defined IMPECCABLE_LAUNCHER_PROBE goto no_home_bin
+-call :probe "%home_bin%"
+-if not "%probe_ok%"=="1" goto no_home_bin
+-set "run=%home_bin%"
+-goto run
++rem Lev patch: unverified %USERPROFILE%\.impeccable\bin\impeccable.exe fallback removed.
+ :no_home_bin
+ 
+ set "version="
+@@ -68,13 +62,8 @@ set "run=%cached%"
+ goto run
+ :no_cache
+ 
+-if defined IMPECCABLE_LAUNCHER_PROBE goto download
+-where impeccable >nul 2>nul
+-if errorlevel 1 goto download
+-call :probe impeccable
+-if not "%probe_ok%"=="1" goto download
+-impeccable %*
+-exit /b %errorlevel%
++rem Lev patch: unverified `impeccable` on PATH fallback removed.
++goto download
+ 
+ :download
+ rem Last resort: fetch this version's binary from the release channel into

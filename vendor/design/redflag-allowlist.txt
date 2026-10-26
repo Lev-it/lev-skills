@@ -1,0 +1,7 @@
+# Reviewed matches that scripts/check-design-skills.sh should not flag.
+# Format: <path>|<fixed substring on that line>. Add a reason for every entry.
+# gsap: tells agents NOT to create an .npmrc or use a private registry (GSAP is on public npm).
+vendor/design/optional/gsap/llms.txt|no `.npmrc` / auth token or private registry required
+vendor/design/optional/gsap/gsap-plugins/SKILL.md|Do **not** generate an `.npmrc` with a GreenSock auth token
+# gsap: trigger keyword list so the plugins skill fires when users ask about the old paid registry.
+vendor/design/optional/gsap/llms.txt|GreenSock auth token, .npmrc GSAP, private GSAP registry
